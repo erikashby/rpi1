@@ -54,6 +54,11 @@ Setup Activity:
         - from /home/erika/app/rpi1
         - flask --app hello run --host=0.0.0.0
 
+- Added script to auto-update pi and launch flask
+    - Added start_api.sh
+    - Updated /app/rpi1/ from github
+    - Rebooted
+
 
 
 
