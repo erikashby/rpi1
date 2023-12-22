@@ -4,13 +4,45 @@ This is the documentation for how the RPI1 is setup
 Device Description
 Raspberry Pi 5, 8GB RAM
 
+Operating System: 32 Bit default Raspberry PI OS (Used Raspberry Pi Imager tool)
+
 Hostname: ashbypi-rpi1
 
 Main account: erika
-Main password: As*00
+PwdHint: As**0
 
 Folder structure
 
 main applications /home/erika/app/rpi1
 
-ls
+Setup Activity:
+- Confirmed RPI was updated
+    - sudo app-get update
+    - sudo apt-get upgrade
+
+- Established Remote access
+    - SSH - On by default from OS setting
+    - RDP using instructions from https://www.youtube.com/watch?v=o-iucAC6PaA&t=192s&ab_channel=UnboxingTomorrow
+        Commands:
+            sudo apt-get remove xrdp vnc4server tightvncserver
+            sudo apt-get install tightvncserver
+            sudo apt-get install xrdp
+    - Tested command line SSH, and RDP terminal
+
+- Installed Flask
+    - made sure there was a virtual enviornment
+    - from /home/erika/app
+    -   sudo apt install python3-venv  << to install virtual enviornment >>
+    -    python3 -m venv app << to create the virtual enviornment called app>>
+    -   . app/bin/activate  << to activate the virtual enviornment >>
+
+    - Installed flask
+        pip install Flask
+
+    - Tested flask
+        
+
+
+
+
+
