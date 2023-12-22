@@ -29,6 +29,16 @@ Setup Activity:
             sudo apt-get install xrdp
     - Tested command line SSH, and RDP terminal
 
+- setup git folder
+    - from /home/erika/app
+    - git clone "http://github.com/erikashby/rpi1"
+
+    - tested git folder
+    - created this README.md
+    - from /home/erika/app/rpi1
+    - git pull "https://github.com/erikashby/rpi1"
+
+
 - Installed Flask
     - made sure there was a virtual enviornment
     - from /home/erika/app
@@ -40,7 +50,10 @@ Setup Activity:
         pip install Flask
 
     - Tested flask
-        
+        - added hello.py (see file) and updated raspberry pi
+        - from /home/erika/app/rpi1
+        - flask --app hello run --host=0.0.0.0
+
 
 
 
