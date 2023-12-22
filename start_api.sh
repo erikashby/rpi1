@@ -3,6 +3,7 @@
 
 #Part 1 - Update API app folder
 cd /home/erika/app/rpi1/
+sleep 30
 git pull https://github.com/erikashby/rpi1
 
 #Part 2 - Start flask
