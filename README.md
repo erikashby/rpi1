@@ -57,6 +57,10 @@ Setup Activity:
 - Added script to auto-update pi and launch flask
     - Added start_api.sh
     - Updated /app/rpi1/ from github
+    - Added cron job to start on reboot
+        - sudo crontab -e
+        - @reboot sh /home/erika/app/rpi1/start_api.sh
+
     - Rebooted
 
 
