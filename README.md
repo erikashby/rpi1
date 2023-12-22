@@ -1,5 +1,5 @@
 # rpi1
-This is the documentation for how the RPI1 is setup
+# This is the documentation for how the RPI1 is setup
 
 Device Description
 Raspberry Pi 5, 8GB RAM
