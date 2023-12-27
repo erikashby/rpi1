@@ -1,1 +1,19 @@
+{
+    "rule" : [ {
+        "quest" : "Light Search",
+        "name" : "Step 1 - Light 1",
+        "trigger" : {
+            "from" : "zero1",
+            "type" : "button",
+            "event" : "button_pressed",
+            "id" : "btn0"
+        }
 
+    },
+    {
+
+    }
+
+]
+
+}
