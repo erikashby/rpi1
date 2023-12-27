@@ -12,6 +12,27 @@ The server API will listen on port 5005, with all APIs under the /server/ API pa
 The 'events' API is intended to capture events sent from different nodes to the serveer.  This is the base for actions that take place across the  network. <br>
 
 - PUT /server/event  - Core API to capture events sent from nodes <br>
--- There are no 
+-- There are no parmeters at this time since event details are included through a json body.  Future iterations of the API will include events that can be passed directly through a parameter
+
+- Event Json
+```
+{
+    'name' = 'nodename'
+    'event' = {
+        'datetime' = '(datetime)'   << Optiona: The date/time the event was sent.  If no datetime is included the current server datetme will be assume as the event datetime >>
+        'type' = 'button'  << Required: Type of event 'button', 'triger' etc.>>
+        'ID' = 'id'  << Optional: ID associated with the event >>
+        'event' = '(event name)'  << Required: One of the supported events for the specific type >>
+        'meta' = {(additional meta data)} << Optional: Additional meta data in json format >>
+    }
+    status =  << Optional status when event is sent from a node>> 
+    {  
+        'datetime' = 'datetime',
+        'light_status' : [ {'id'= 'led0','state'=0 },{'id'= 'led1','state'=0 }...]
+    }
+}
+```
+
+
 
 
