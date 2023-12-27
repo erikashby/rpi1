@@ -21,7 +21,7 @@ def test_put():
 
     for x in status:
         if x == 'status':
-            for y in x:
+            for y in status[x]:
                 print(y)
 
     send_toggle = "http://" + get_ip + ":5000/node/light?id=led0&action="
