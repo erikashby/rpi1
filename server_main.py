@@ -10,5 +10,7 @@ def hello_world():
 @app.route('/testput', methods=["PUT"])
 def test_put():
     event = json.dumps(request.json)
-    print(event)
+    print(type(event))
+
+    
     return "<h1>TEST<h1>"
