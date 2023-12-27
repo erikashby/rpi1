@@ -20,7 +20,9 @@ def test_put():
     status = requests.get(status_url).json()
 
     for x in status:
-        print(x)
+        if x == 'status':
+            for y in x:
+                print(y)
 
     send_toggle = "http://" + get_ip + ":5000/node/light?id=led0&action="
 
