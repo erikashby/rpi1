@@ -19,7 +19,7 @@ def test_put():
     status_url = "http://" + get_ip + ":5000/node/status"
     status = requests.get(status_url).json()
 
-    get_action = status['status']['light_status']
+    get_action = status['status']['light_status'][0]['state']
     print(get_action)
     send_toggle = "http://" + get_ip + ":5000/node/light?id=led0&action="
 
