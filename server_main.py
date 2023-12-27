@@ -10,6 +10,8 @@ def hello_world():
 @app.route('/testput', methods=["PUT"])
 def test_put():
     event = request.json
-    print(type(event))
+    for i in event:
+        print(i)
+    
     
     return "<h1>TEST<h1>"
