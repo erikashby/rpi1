@@ -15,6 +15,7 @@ def hello_world():
 def event():
     response = request.json
     quest(response)
+    return "200"
 
 @app.route('/testput', methods=["PUT"])
 def test_put():
