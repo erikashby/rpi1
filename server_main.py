@@ -10,5 +10,5 @@ def hello_world():
 @app.route('/testput', methods=["PUT"])
 def test_put():
     event = request.json
-    print("got req")
+    print(event)
     return "<h1>TEST<h1>"
