@@ -16,9 +16,10 @@ def test_put():
             get_ip = event[i]
     
     status_url = "http://" + get_ip + ":5000/node/status"
-    status = requests.get(status_url)
+    print(type(status_url))
+    #status = requests.get(st)
 
-    print(status)
+    #print(status)
 
     send_toggle = "http://" + get_ip + ":5000/node/light?id=led0&action="
 
