@@ -24,9 +24,9 @@ def test_put():
 
     print(type(get_state))
 
-    if get_state == '0':
+    if get_state == 0:
         action = 'on'
-    elif get_state == '1':
+    elif get_state == 1:
         action = 'off'
 
     print(action)
