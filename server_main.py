@@ -10,16 +10,17 @@ def hello_world():
 @app.route('/testput', methods=["PUT"])
 def test_put():
     get_ip = '1'
+    get_action = 'on'
     event = request.json
     for i in event:
         if i == 'source ip':
             get_ip = event[i]
     
     status_url = "http://" + get_ip + ":5000/node/status"
-    print(status_url)
     status = requests.get(status_url).json()
 
-    print(status)
+    for x in status:
+        print(x)
 
     send_toggle = "http://" + get_ip + ":5000/node/light?id=led0&action="
 
