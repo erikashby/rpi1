@@ -17,7 +17,7 @@ def test_put():
     
     status_url = "http://" + get_ip + ":5000/node/status"
     print(status_url)
-    status = requests.get(status_url)
+    status = requests.get(status_url).json
 
     print(status)
 
