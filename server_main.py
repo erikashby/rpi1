@@ -10,4 +10,4 @@ def hello_world():
 @app.route('/testput', methods=["PUT"])
 def test_put():
     event = request.json
-    print(event)
+    return event
