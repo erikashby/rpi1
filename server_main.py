@@ -3,9 +3,18 @@ from datetime import datetime
 from flask import Flask, request
 app = Flask(__name__)
 
+def quest(event):
+    pass
+
+
 @app.route('/')
 def hello_world():
     return 'Hello, users!'
+
+@app.route('/event', methods=['PUT'])
+def event():
+    response = request.json
+    quest(response)
 
 @app.route('/testput', methods=["PUT"])
 def test_put():
