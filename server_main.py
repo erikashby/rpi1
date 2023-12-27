@@ -20,8 +20,6 @@ def test_put():
     status_url = "http://" + get_ip + ":5000/node/status"
     status = requests.get(status_url).json()
 
-    print(status)
-
     get_state = status['status']['light_status'][0]['state']
 
     if get_state == 0:
