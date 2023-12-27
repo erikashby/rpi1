@@ -17,7 +17,10 @@ The 'events' API is intended to capture events sent from different nodes to the 
 - Event Json
 ```
 {
-    'name' = 'nodename'
+    'name' = 'nodename' << required >>
+    'type' = 'node' << required: type of device sending event >>
+    'version' = '0.1' << optional: version of aoftware sending event >>
+    'source ip' = '192.168.1.204' << optional >>
     'event' = {
         'datetime' = '(datetime)'   << Optiona: The date/time the event was sent.  If no datetime is included the current server datetme will be assume as the event datetime >>
         'type' = 'button'  << Required: Type of event 'button', 'triger' etc.>>
