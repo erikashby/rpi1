@@ -1,4 +1,4 @@
-import json
+import json, requests
 from datetime import datetime
 from flask import Flask, request
 app = Flask(__name__)
@@ -10,17 +10,17 @@ def hello_world():
 @app.route('/testput', methods=["PUT"])
 def test_put():
     get_ip = '1'
-    get_action = 'toggle'
     event = request.json
     for i in event:
         if i == 'source ip':
             get_ip = event[i]
-        if i == 'action':
-            get_action = event[i]
     
-    print("source ip = " + get_ip)
+    status_url = "http://" + get_ip + ":5000/node/status"
+    status = requests.get(status_url)
 
-    send_toggle = "http://" + get_ip + ":5000/node/light?id=led0&action=" + get_action
+    print(status)
+
+    send_toggle = "http://" + get_ip + ":5000/node/light?id=led0&action="
 
     return "<h1>TEST<h1>"
 
