@@ -4,7 +4,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 def quest(event):
-    pass
+    print(event)
 
 
 @app.route('/')
