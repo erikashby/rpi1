@@ -20,16 +20,14 @@ def test_put():
     status_url = "http://" + get_ip + ":5000/node/status"
     status = requests.get(status_url).json()
 
-    get_state = status['status']['light_status'][0]['state']
+    print(status)
 
-    print(type(get_state))
+    get_state = status['status']['light_status'][0]['state']
 
     if get_state == 0:
         action = 'on'
     elif get_state == 1:
         action = 'off'
-
-    print(action)
 
     toggle_url = "http://" + get_ip + ":5000/node/light?id=led0&action=" + action
 
