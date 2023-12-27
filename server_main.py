@@ -15,4 +15,5 @@ def test_put():
         if i == 'source ip':
             get_ip = event[i]
     
+    print("source ip = " + get_ip)
     return "<h1>TEST<h1>"
