@@ -22,7 +22,7 @@ def test_put():
 
     get_state = status['status']['light_status'][0]['state']
 
-    print(get_state)
+    print(type(get_state))
 
     if get_state == '0':
         action = 'on'
