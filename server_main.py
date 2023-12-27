@@ -9,9 +9,10 @@ def hello_world():
 
 @app.route('/testput', methods=["PUT"])
 def test_put():
+    get_ip = '1'
     event = request.json
     for i in event:
-        print(i)
-    
+        if i == 'source ip':
+            get_ip = event[i]
     
     return "<h1>TEST<h1>"
