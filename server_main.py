@@ -33,3 +33,9 @@ def test_put():
 
     return "<h1>TEST<h1>"
 
+
+@app.route('/testprint', methods=["PUT"])
+def test_print():
+    response = request.json
+    for i in response:
+        print(i)
