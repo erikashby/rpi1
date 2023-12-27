@@ -22,10 +22,14 @@ def test_put():
 
     get_state = status['status']['light_status'][0]['state']
 
+    print(get_state)
+
     if get_state == '0':
         action = 'on'
     elif get_state == '1':
         action = 'off'
+
+    print(action)
 
     toggle_url = "http://" + get_ip + ":5000/node/light?id=led0&action=" + action
 
