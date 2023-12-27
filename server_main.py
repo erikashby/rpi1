@@ -37,6 +37,7 @@ def test_put():
 @app.route('/testprint', methods=["PUT"])
 def test_print():
     response = request.json
+    print(response)
 
     '''
     'name' = 'nodename' << required >>
@@ -65,9 +66,9 @@ def test_print():
     print('my event type is ' + response['event']['type'])
     print('my event ID is ' + response['event']['ID'])
     print('the ' + response['event']['event'] + ' has been made.')
-    #print('my status datetime is ' + response['status']['datetime'])
-    #for i in response['status']['light_status']:
-    #    print('id: ' + i['id'] + ' with state ' + i['state'])
+    print('my status datetime is ' + response['status']['datetime'])
+    for i in response['status']['light_status']:
+        print('id: ' + i['id'] + ' with state ' + i['state'])
 
     
     return "<h1>test<h1>"
