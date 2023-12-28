@@ -27,11 +27,13 @@ status =  << Optional status when event is sent from a node>>
 '''
 
 def quest(event):
+    eventname = event['name']
     eventtype = event['event']['type']
     eventId = event['event']['ID']
     eventevent = event['event']['event']
+    eventtrigger = rules["rule"][0]["trigger"]
 
-    print(rules["rule"][0]["trigger"]["from"])
+    print(eventtrigger["from"])
 
 @app.route('/')
 def hello_world():
