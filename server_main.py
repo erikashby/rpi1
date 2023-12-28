@@ -7,6 +7,9 @@ get_rules = open("rules.json")
 rules = json.load(get_rules)
 get_rules.close()
 
+zero1url = "http://192.168.1.204:5000"
+zero2url = "http://192.168.1.170:5000"
+
 '''
 'name' = 'nodename' << required >>
 'type' = 'node' << required: type of device sending event >>
@@ -64,7 +67,14 @@ def trigger_action(action):
 
 def check_cond(cond):
     print("Cond: \n" + str(cond) + "\n\n")
+    cond_type = cond["type"]
+    cond_status = ""
+    cond_cond = ""
 
+    # figure out what type of condition it is and data.
+    match cond_type:
+        case "nodestatus":
+            cond_status = get_status_on_node(cond["node"])
 
     return False
     for c in cond:
@@ -75,6 +85,21 @@ def check_cond(cond):
                 continue
 
     return False
+
+def get_status_on_node(node):
+    nodeurl = ""
+
+    if node == "zero1":
+        nodeurl = zero1url
+    elif node == "zero2":
+        nodeurl = zero2url
+    else:
+        return None
+    
+    status = requests.get(nodeurl + "/node/status").json()
+    print("STATUS:")
+    print(status)
+    return status
 
 @app.route('/')
 def hello_world():
