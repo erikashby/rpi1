@@ -58,7 +58,7 @@ def quest(event):
 
 def trigger_action(action):
     for a in action:
-        requests.get(str(a["URL"]+"?"+a["parameter"]))
+        requests.get(str(a["URL"]), str(a["parameter"]))
 
     
                 
