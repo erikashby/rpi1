@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # GitHub repository URL
-github_repo="https://github.com/erikashby/zero2"
+github_repo="https://github.com/erikashby/rpi1"
 
 # Directory where you want to clone or pull the repository
-local_directory="/home/erika/app/zero2"
+local_directory="/home/erika/app/rpi1"
 
 # Ensure the local directory exists
 if [ ! -d "$local_directory" ]; then
