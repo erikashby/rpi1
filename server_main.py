@@ -41,13 +41,9 @@ def quest(event):
     for rule in rules["rule"]:
         #print(str(rule["trigger"]["from"]) + "\n\n")
         if rule["trigger"]["from"] == eventname and rule["trigger"]["type"] == eventtype and rule["trigger"]["event"] == eventevent and rule["trigger"]["id"] == eventId:
-            print("triggered!!!\n")
-        
-                
-
-
-def check_cond(cond, val):
-    return True
+            #print("triggered!!!\n")
+            for c in rule["conditions"]:
+                print(c)
     
 
 @app.route('/')
