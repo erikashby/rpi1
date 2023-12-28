@@ -53,6 +53,13 @@ def quest(event):
                     action = rule["falseactions"]
                     print("ACTION FALSE")
                     break
+    trigger_action(action)
+        
+
+def trigger_action(action):
+    for a in action:
+        print(a)
+
     
                 
     
