@@ -39,10 +39,10 @@ def quest(event):
     # if true, trueaction, if false false action
 
     for trigger in rules["rule"]:
-        print("Trigger: " + trigger + "\n\n")
+        print("Trigger: " + str(trigger) + "\n\n")
         if trigger["trigger"]["from"] == eventname and trigger["trigger"]["type"] == eventtype and trigger["trigger"]["event"] == eventevent and trigger["trigger"]["id"] == eventId:
             for cond in rules["rule"]:
-                print("Cond: " + cond)
+                print("Cond: " + str(cond))
                 
 
 
