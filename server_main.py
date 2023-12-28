@@ -7,32 +7,31 @@ get_rules = open("rules.json")
 rules = json.load(get_rules)
 get_rules.close()
 
+'''
+'name' = 'nodename' << required >>
+'type' = 'node' << required: type of device sending event >>
+'version' = '0.1' << optional: version of aoftware sending event >>
+'source ip' = '192.168.1.204' << optional >>
+'event' = {
+    'datetime' = '(datetime)'   << Optiona: The date/time the event was sent.  If no datetime is included the current server datetme will be assume as the event datetime >>
+    'type' = 'button'  << Required: Type of event 'button', 'triger' etc.>>
+    'ID' = 'id'  << Optional: ID associated with the event >>
+    'event' = '(event name)'  << Required: One of the supported events for the specific type >>
+    'meta' = {(additional meta data)} << Optional: Additional meta data in json format >>
+}
+status =  << Optional status when event is sent from a node>> 
+{  
+    'datetime' = 'datetime',
+    'light_status' : [ {'id'= 'led0','state'=0 },{'id'= 'led1','state'=0 }...]
+}
+'''
+
 def quest(event):
-    '''
-    'name' = 'nodename' << required >>
-    'type' = 'node' << required: type of device sending event >>
-    'version' = '0.1' << optional: version of aoftware sending event >>
-    'source ip' = '192.168.1.204' << optional >>
-    'event' = {
-        'datetime' = '(datetime)'   << Optiona: The date/time the event was sent.  If no datetime is included the current server datetme will be assume as the event datetime >>
-        'type' = 'button'  << Required: Type of event 'button', 'triger' etc.>>
-        'ID' = 'id'  << Optional: ID associated with the event >>
-        'event' = '(event name)'  << Required: One of the supported events for the specific type >>
-        'meta' = {(additional meta data)} << Optional: Additional meta data in json format >>
-    }
-    status =  << Optional status when event is sent from a node>> 
-    {  
-        'datetime' = 'datetime',
-        'light_status' : [ {'id'= 'led0','state'=0 },{'id'= 'led1','state'=0 }...]
-    }
-    '''
-    print(rules)
     eventtype = event['event']['type']
     eventId = event['event']['ID']
     eventevent = event['event']['event']
-    print(eventtype)
-    print(eventId)
-    print(eventevent)
+
+    print(rules[0]["trigger"]["from"])
 
 @app.route('/')
 def hello_world():
