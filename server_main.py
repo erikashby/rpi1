@@ -63,7 +63,6 @@ def check_cond(cond, val):
     for c in cond:
         for v in val:
             if v == c:
-                print("\n\nFOUND TRUE")
                 return True
             else:
                 continue
