@@ -3,7 +3,9 @@ from datetime import datetime
 from flask import Flask, request
 app = Flask(__name__)
 
-rules = json.load("rules.json")
+get_rules = open("rules.json")
+rules = json.load(get_rules)
+get_rules.close()
 
 def quest(event):
     '''
