@@ -46,7 +46,7 @@ def quest(event):
         print(rule["name"])
         #print(str(rule["trigger"]["from"]) + "\n\n")
         if rule["trigger"]["from"] == eventname and rule["trigger"]["type"] == eventtype and rule["trigger"]["event"] == eventevent and rule["trigger"]["id"] == eventId:
-            #print("triggered!!!\n")
+            print("triggered!!!\n")
             for c in rule["conditions"]:
                 if check_cond(c):
                     action = rule["trueactions"]
