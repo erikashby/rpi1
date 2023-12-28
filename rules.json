@@ -12,10 +12,20 @@
             "type" : "nodestatus",
             "node" : "zero1",
             "condition" : {
-                "lightstatus" :[{"id" : "led0", "state" : "on"}]
+                "lightstatus" :[{"id" : "led0", "state" : 0}]
             }
-        }
-        ]
+        }],
+        "trueactions" : [{
+            "type" : "REST",
+            "URL" : "192.169.1.204:5000/node/light",
+            "parameter" : "is=led0&action=on"
+        }],
+        "falseactions" :
+        [{
+            "type" : "REST",
+            "URL" : "192.169.1.204:5000/node/light",
+            "parameter" : "is=led0&action=off"
+        }] 
     }
     ]
 
