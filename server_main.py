@@ -40,8 +40,8 @@ def quest(event):
 
     for rule in rules["rule"]:
         #print(str(rule["trigger"]["from"]) + "\n\n")
-        if rule["trigger"]["from"] == eventname:
-            print("got the name!!!\n")
+        if rule["trigger"]["from"] == eventname and rule["trigger"]["type"] == eventtype and rule["trigger"]["event"] == eventevent and rule["trigger"]["id"] == eventId:
+            print("triggered!!!\n")
         
                 
 
