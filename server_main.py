@@ -32,6 +32,7 @@ def quest(event):
     eventtype = event['event']['type']
     eventId = event['event']['ID']
     eventevent = event['event']['event']
+    action = None
     
     # Loop rule array
     # inside rule loop, check each trigger
@@ -43,8 +44,20 @@ def quest(event):
         if rule["trigger"]["from"] == eventname and rule["trigger"]["type"] == eventtype and rule["trigger"]["event"] == eventevent and rule["trigger"]["id"] == eventId:
             #print("triggered!!!\n")
             for c in rule["conditions"]:
-                print(c)
+                if check_cond(c, event):
+                    action = rule["trueactions"]
+                    continue
+                else:
+                    action = rule["falseactions"]
+                    break
     
+                
+    
+def check_cond(cond, val):
+    action = False
+    print("Cond: \n" + str(cond) + "\n\n")
+    print("Val: \n" + str(val))
+    return action
 
 @app.route('/')
 def hello_world():
