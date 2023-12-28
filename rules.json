@@ -7,13 +7,16 @@
             "type" : "button",
             "event" : "button_pressed",
             "id" : "btn0"
+        },
+        "conditions" : [{
+            "type" : "nodestatus",
+            "node" : "zero1",
+            "condition" : {
+                "lightstatus" :[{"id" : "led0", "state" : "on"}]
+            }
         }
-
-    },
-    {
-
+        ]
     }
-
-]
+    ]
 
 }
