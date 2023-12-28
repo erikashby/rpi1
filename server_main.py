@@ -47,9 +47,11 @@ def quest(event):
             for c in rule["conditions"]:
                 if check_cond(c["condition"]["lightstatus"], eventlightstatus):
                     action = rule["trueactions"]
+                    print("ACTION TRUE")
                     continue
                 else:
                     action = rule["falseactions"]
+                    print("ACTION FALSE")
                     break
     
                 
