@@ -1,5 +1,7 @@
 {
     "name":"rpi1",
     "version":"0.1",
-    "type":"node"
+    "type":"node",
+    "serverIP":"http://192.168.1.166",
+    "serverPort":"5005"
 }
