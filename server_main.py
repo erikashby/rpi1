@@ -31,7 +31,7 @@ def quest(event):
     eventId = event['event']['ID']
     eventevent = event['event']['event']
 
-    print(rules["rules"][0]["trigger"]["from"])
+    print(rules["rule"][0]["trigger"]["from"])
 
 @app.route('/')
 def hello_world():
