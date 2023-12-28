@@ -32,8 +32,12 @@ def quest(event):
     eventtype = event['event']['type']
     eventId = event['event']['ID']
     eventevent = event['event']['event']
+    eventlightstatus = event['status']['light_status'][0]
     action = None
     
+    print(eventlightstatus)
+    print("\n")
+
     # Loop rule array
     # inside rule loop, check each trigger
     # if event match trigger, loop through condition
