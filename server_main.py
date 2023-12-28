@@ -32,7 +32,6 @@ def quest(event):
     eventtype = event['event']['type']
     eventId = event['event']['ID']
     eventevent = event['event']['event']
-    eventlightstatus = event['status']['lightstatus']
     action = None
 
     # Loop rule array
@@ -45,7 +44,7 @@ def quest(event):
         if rule["trigger"]["from"] == eventname and rule["trigger"]["type"] == eventtype and rule["trigger"]["event"] == eventevent and rule["trigger"]["id"] == eventId:
             #print("triggered!!!\n")
             for c in rule["conditions"]:
-                if check_cond(c["condition"]["lightstatus"], eventlightstatus):
+                if check_cond(c["condition"]):
                     action = rule["trueactions"]
                     print("ACTION TRUE")
                     continue
@@ -62,13 +61,12 @@ def trigger_action(action):
         r = requests.get(action_url, str(a["parameter"]))
         print(r)
 
-    
-                
-    
-def check_cond(cond, val):
-    print("Cond: \n" + str(cond) + "\n\n")
-    print("Val: \n" + str(val))
 
+def check_cond(cond):
+    print("Cond: \n" + str(cond) + "\n\n")
+
+
+    return False
     for c in cond:
         for v in val:
             if v == c:
