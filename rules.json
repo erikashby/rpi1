@@ -17,13 +17,13 @@
         }],
         "trueactions" : [{
             "type" : "REST",
-            "URL" : "192.169.1.204:5000/node/light",
+            "URL" : "192.168.1.204:5000/node/light",
             "parameter" : "id=led0&action=on"
         }],
         "falseactions" :
         [{
             "type" : "REST",
-            "URL" : "192.169.1.204:5000/node/light",
+            "URL" : "192.168.1.204:5000/node/light",
             "parameter" : "id=led0&action=off"
         }] 
     },
@@ -52,17 +52,17 @@
             }],
         "trueactions" : [{
             "type" : "REST",
-            "URL" : "192.169.1.170:5000/node/light",
+            "URL" : "192.168.1.170:5000/node/light",
             "parameter" : "id=led0&action=on"
             }],
         "falseactions" :
         [{
             "type" : "REST",
-            "URL" : "192.169.1.204:5000/node/light",
+            "URL" : "192.168.1.204:5000/node/light",
             "parameter" : "id=led0&action=off"
             },{
             "type" : "REST",
-            "URL" : "192.169.1.170:5000/node/light",
+            "URL" : "192.168.1.170:5000/node/light",
             "parameter" : "id=led0&action=off"
             }] 
     }
