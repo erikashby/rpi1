@@ -30,11 +30,8 @@ status =  << Optional status when event is sent from a node>>
 '''
 
 def quest(event):
-    # Each event name, type, id, and event
-    print(event)
-    eventname = event['name']
+    print(str(event))
     eventtype = event['event']['type']
-    eventId = event['event']['ID']
     eventevent = event['event']['event']
     action = None
 
@@ -44,18 +41,17 @@ def quest(event):
     # if true, trueaction, if false false action
 
     for rule in rules["rule"]:
-        print(rule["name"])
-        #print(str(rule["trigger"]["from"]) + "\n\n")
-        if rule["trigger"]["from"] == eventname and rule["trigger"]["type"] == eventtype and rule["trigger"]["event"] == eventevent and rule["trigger"]["id"] == eventId:
+        print("Name: " + str(rule["name"]) + "\n\n")
+        if rule["trigger"]["type"] == eventtype and rule["trigger"]["event"] == eventevent:
             print("triggered!!!\n")
             for c in rule["conditions"]:
                 if check_cond(c):
                     action = rule["trueactions"]
-                    print("ACTION TRUE")
+                    print("ACTION TRUE\n")
                     continue
                 else:
                     action = rule["falseactions"]
-                    print("ACTION FALSE")
+                    print("ACTION FALSE\n")
                     break
     trigger_action(action)
         
