@@ -62,29 +62,26 @@ def trigger_action(action):
     for a in action:
         action_url = "http://" + str(a["URL"]) 
         r = requests.get(action_url, str(a["parameter"]))
-        print(r)
 
 
 def check_cond(cond):
-    print("Cond: \n" + str(cond) + "\n\n")
+    print("\n Cond: \n" + str(cond) + "\n\n")
     cond_type = cond["type"]
-    cond_status = ""
-    cond_cond = ""
+    node_status = ""
+    action_output = False
 
     # figure out what type of condition it is and data.
     match cond_type:
         case "nodestatus":
-            cond_status = get_status_on_node(cond["node"])
+            node_status = get_status_on_node(cond["node"])
 
-    return False
     for c in cond:
-        for v in val:
-            if v == c:
-                return True
-            else:
-                continue
+        for ns in node_status:
+            # check each of the node status items and look against it.
+            if list(c["condition"].keys())[0] == list(ns.keys())[0]:
+                print("\n\n matched!!!!!!")
 
-    return False
+    return action_output
 
 def get_status_on_node(node):
     nodeurl = ""
@@ -98,8 +95,8 @@ def get_status_on_node(node):
     
     status = requests.get(nodeurl + "/node/status").json()
     print("STATUS:")
-    print(status)
-    return status
+    print(status["status"])
+    return status["status"]
 
 @app.route('/')
 def hello_world():

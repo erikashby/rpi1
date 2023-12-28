@@ -12,7 +12,7 @@
             "type" : "nodestatus",
             "node" : "zero1",
             "condition" : {
-                "lightstatus" :[{"id" : "led0", "state" : 0}]
+                "lightstatus" :{"id" : "led0", "state" : 0}
             }
         }],
         "trueactions" : [{
@@ -40,14 +40,14 @@
             "type" : "nodestatus",
             "node" : "zero1",
             "condition" : {
-                "lightstatus" :[{"id" : "led0", "state" : 1}]
+                "lightstatus" :{"id" : "led0", "state" : 1}
                 }
             },
             {
             "type" : "nodestatus",
             "node" : "zero2",
             "condition" : {
-                "lightstatus" :[{"id" : "led0", "state" : 0}]                
+                "lightstatus" :{"id" : "led0", "state" : 0}                
                 }
             }],
         "trueactions" : [{
