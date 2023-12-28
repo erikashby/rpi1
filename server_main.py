@@ -39,7 +39,7 @@ def quest(event):
     # if true, trueaction, if false false action
 
     for rule in rules["rule"]:
-        print("Rule: " + str(rule))
+        print(rule["trigger"])
         
                 
 
