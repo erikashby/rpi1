@@ -27,12 +27,12 @@ def quest(event):
     }
     '''
     print(rules)
-    type = event['event']['type']
+    eventtype = event['event']['type']
     eventId = event['event']['ID']
     eventevent = event['event']['event']
-
-
-
+    print(eventtype)
+    print(eventId)
+    print(eventevent)
 
 @app.route('/')
 def hello_world():
