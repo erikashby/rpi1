@@ -31,6 +31,7 @@ status =  << Optional status when event is sent from a node>>
 
 def quest(event):
     # Each event name, type, id, and event
+    print(event)
     eventname = event['name']
     eventtype = event['event']['type']
     eventId = event['event']['ID']
