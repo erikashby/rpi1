@@ -32,7 +32,7 @@ def quest(event):
     eventtype = event['event']['type']
     eventId = event['event']['ID']
     eventevent = event['event']['event']
-    eventlightstatus = event['status']['lightstatus'][0]
+    eventlightstatus = event['status']['lightstatus']
     action = None
     
     print(eventlightstatus)
