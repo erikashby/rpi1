@@ -41,11 +41,13 @@ def quest(event):
     for trigger in rules["rule"]:
         if trigger["trigger"]["from"] == eventname and trigger["trigger"]["type"] == eventtype and trigger["trigger"]["event"] == eventevent and trigger["trigger"]["id"] == eventId:
             for cond in rules["rule"]:
-                if cond["conditions"]["condition"] == "eventlightstatus":
-                    pass # send off, true action
+                print(cond)
+                print(cond["conditions"]["condition"])
+                
 
 
-    
+def check_cond(cond, val):
+    return True
     
 
 @app.route('/')
