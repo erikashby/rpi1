@@ -27,13 +27,26 @@ status =  << Optional status when event is sent from a node>>
 '''
 
 def quest(event):
+    # Each event name, type, id, and event
     eventname = event['name']
     eventtype = event['event']['type']
     eventId = event['event']['ID']
     eventevent = event['event']['event']
-    eventtrigger = rules["rule"][0]["trigger"]
+    
+    # Loop rule array
+    # inside rule loop, check each trigger
+    # if event match trigger, loop through condition
+    # if true, trueaction, if false false action
 
-    print(eventtrigger["from"])
+    for trigger in rules["rule"]:
+        if trigger["trigger"]["from"] == eventname and trigger["trigger"]["type"] == eventtype and trigger["trigger"]["event"] == eventevent and trigger["trigger"]["id"] == eventId:
+            for cond in rules["rule"]:
+                if cond["conditions"]["condition"] == "eventlightstatus":
+                    pass # send off, true action
+
+
+    
+    
 
 @app.route('/')
 def hello_world():

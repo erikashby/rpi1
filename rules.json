@@ -18,13 +18,13 @@
         "trueactions" : [{
             "type" : "REST",
             "URL" : "192.169.1.204:5000/node/light",
-            "parameter" : "is=led0&action=on"
+            "parameter" : "id=led0&action=on"
         }],
         "falseactions" :
         [{
             "type" : "REST",
             "URL" : "192.169.1.204:5000/node/light",
-            "parameter" : "is=led0&action=off"
+            "parameter" : "id=led0&action=off"
         }] 
     },
     {
@@ -53,17 +53,17 @@
         "trueactions" : [{
             "type" : "REST",
             "URL" : "192.169.1.170:5000/node/light",
-            "parameter" : "is=led0&action=on"
+            "parameter" : "id=led0&action=on"
             }],
         "falseactions" :
         [{
             "type" : "REST",
             "URL" : "192.169.1.204:5000/node/light",
-            "parameter" : "is=led0&action=off"
+            "parameter" : "id=led0&action=off"
             },{
             "type" : "REST",
             "URL" : "192.169.1.170:5000/node/light",
-            "parameter" : "is=led0&action=off"
+            "parameter" : "id=led0&action=off"
             }] 
     }
     ]
