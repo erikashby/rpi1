@@ -26,6 +26,45 @@
             "URL" : "192.169.1.204:5000/node/light",
             "parameter" : "is=led0&action=off"
         }] 
+    },
+    {
+    "quest" : "Light Search",
+        "name" : "Step 1 - Light 2",
+        "trigger" : {
+            "from" : "zero2",
+            "type" : "button",
+            "event" : "button_pressed",
+            "id" : "btn0"
+        },
+        "conditions" : [{
+            "type" : "nodestatus",
+            "node" : "zero1",
+            "condition" : {
+                "lightstatus" :[{"id" : "led0", "state" : 1}]
+                }
+            },
+            {
+            "type" : "nodestatus",
+            "node" : "zero2",
+            "condition" : {
+                "lightstatus" :[{"id" : "led0", "state" : 0}]                
+                }
+            }],
+        "trueactions" : [{
+            "type" : "REST",
+            "URL" : "192.169.1.170:5000/node/light",
+            "parameter" : "is=led0&action=on"
+            }],
+        "falseactions" :
+        [{
+            "type" : "REST",
+            "URL" : "192.169.1.204:5000/node/light",
+            "parameter" : "is=led0&action=off"
+            },{
+            "type" : "REST",
+            "URL" : "192.169.1.170:5000/node/light",
+            "parameter" : "is=led0&action=off"
+            }] 
     }
     ]
 
