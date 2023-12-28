@@ -79,7 +79,9 @@ def check_cond(cond):
         for ns in node_status:
             # check each of the node status items and look against it.
             if list(cond["condition"].keys())[0] == ns:
-                print("\n\n matched!!!!!!")
+                for s in node_status[ns]:
+                    if cond["condition"][ns] == s:
+                        action_output = True
 
     return action_output
 
