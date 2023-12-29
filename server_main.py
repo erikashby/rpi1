@@ -12,7 +12,7 @@ get_rules.close()
 zero1url = "http://192.168.1.204:5000"
 zero2url = "http://192.168.1.170:5000"
 
-
+# main function for the quest
 def quest(event):
     print(str(event))
     eventtype = event['event']['type']
