@@ -40,3 +40,7 @@ The 'events' API is intended to capture events sent from different nodes to the 
 The following events are valid for the button event
 - button_pressed  - This event will trigger when a button is pressed down
 - button_released  - This event will trigger when a button is relesaed after being pressed down.
+
+## REST API EVENTS
+The following events are valid REST API events
+- API
