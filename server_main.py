@@ -11,6 +11,7 @@ get_rules.close()
 # Temporarily hard code node url
 zero1url = "http://192.168.1.204:5000"
 zero2url = "http://192.168.1.170:5000"
+pico1 = "http//10.0.0.179:5000"
 
 # main function for the quest
 def quest(event):
