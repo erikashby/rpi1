@@ -39,6 +39,7 @@ def find_nodes():
     # now search for IPs
     for x in range(1,256):
         search_ip = base_ip + str(x) + ":5000"
+        # Try Exception, if connection error, continue, else put in "nodes" array
         test_ip = get_status_on_node(search_ip)
         if get_status_on_node(search_ip):
             nodes.append[test_ip]
