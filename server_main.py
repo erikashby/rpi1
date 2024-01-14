@@ -139,14 +139,11 @@ def check_cond(cond):
     return action_output'''
 
 def get_status_on_node(nodeurl):
-    status_check = requests.get(nodeurl + "/status")
-    if status_check.status_code == 200:
-        # get node status, and return node_status["status"].
-        status = requests.get(nodeurl + "/status").json()
-        print("STATUS:")
-        print(status)
-        return status
-    return False
+    # get node status, and return node_status["status"].
+    status = requests.get(nodeurl + "/status").json()
+    print("STATUS:")
+    print(status)
+    return status
 
 @app.route('/')
 def hello_world():
