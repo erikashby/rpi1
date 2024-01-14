@@ -38,9 +38,11 @@ def find_nodes():
     # base_ip should equal "10.0.0." or "192.168.1."
     # now search for IPs
     for x in range(1,256):
-        search_ip = base_ip + str(x)
-        if x < 10 or x > 250:
-            print(search_ip)
+        search_ip = base_ip + str(x) + ":5000"
+        test_ip = get_status_on_node(search_ip)
+        if get_status_on_node(search_ip):
+            nodes.append[test_ip]
+
         
 find_nodes()
 
