@@ -4,19 +4,17 @@
             "quest": "LED Fire",
             "name": "Fire On",
             "trigger": {
-                "from": "pico1",
+                "from": "URL",
                 "type": "REST",
                 "event": "API"
             },
             "conditions": [
                 {
-                    "type": "REST",
-                    "node": "API",
+                    "family": "ledstrip_fire",
+                    "node": "pico1",
                     "condition": {
-                        "actions": {
-                            "name": "ledstrip_fire_on",
-                            "action": "on"
-                        }
+                        "from": "URL",
+                        "type": "REST"
                     }
                 }
             ],
