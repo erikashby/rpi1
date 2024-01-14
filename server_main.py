@@ -1,4 +1,4 @@
-import json, requests
+import json, requests, socket
 from datetime import datetime
 from flask import Flask, request
 app = Flask(__name__)
@@ -11,7 +11,37 @@ get_rules.close()
 # Temporarily hard code node url
 zero1url = "http://192.168.1.204:5000"
 zero2url = "http://192.168.1.170:5000"
-pico1 = "http//10.0.0.179:5000"
+pico1url = "http://10.0.0.226:5000"
+
+# Get server IP
+testIP = "8.8.8.8"
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect((testIP, 0))
+# myip
+myip = s.getsockname()[0]
+s.close()
+
+# Find nodes on the network
+nodes = []
+def find_nodes():
+    nodes = []
+    dot_count = 0
+    base_ip = ""
+    # 10.0.0.226
+    for i in myip:
+        if dot_count < 3:
+            base_ip += i
+        if i == ".":
+            dot_count += 1
+    
+    print(base_ip)
+    # base_ip should equal "10.0.0." or "192.168.1."
+    # now search for IPs
+    for x in range(1,256):
+        search_ip = base_ip + str(x)
+        
+
+
 
 # main function for the quest
 def quest(event):
@@ -95,11 +125,13 @@ def get_status_on_node(node):
         nodeurl = zero1url
     elif node == "zero2":
         nodeurl = zero2url
+    elif node == "pico1":
+        nodeurl = pico1url
     else:
         return None
     
     # get node status, and return node_status["status"].
-    status = requests.get(nodeurl + "/node/status").json()
+    status = requests.get(nodeurl + "/status").json()
     print("STATUS:")
     print(status["status"])
     return status["status"]
