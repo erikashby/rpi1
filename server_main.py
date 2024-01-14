@@ -89,7 +89,7 @@ def check_cond(cond):
     # passes the (rules -> conditions) into cond,
     # gets condition type
     print("\n Cond: \n" + str(cond) + "\n\n")
-    cond_type = cond["type"]
+    cond_type = str(cond["type"])
     node_status = ""
     action_output = False
 
