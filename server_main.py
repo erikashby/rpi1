@@ -43,9 +43,6 @@ def find_nodes():
         if get_status_on_node(search_ip):
             nodes.append[test_ip]
 
-        
-find_nodes()
-
 event_example = '''
 {
     # the underscore are visuals for optional but not the real name. e.g. _ID = ID
@@ -193,3 +190,5 @@ def fireoff():
     response = request.json
     quest(response)
     return "fire off"
+
+find_nodes()
