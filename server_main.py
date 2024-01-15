@@ -38,7 +38,7 @@ def find_nodes():
     # base_ip should equal "10.0.0." or "192.168.1."
     # now search for IPs
     for x in range(1,256):
-        search_ip = base_ip + str(x) + ":5000"
+        search_ip = "http://" + base_ip + str(x) + ":5000"
         # Try Exception, if connection error, continue, else put in "nodes" array
         try:
             test_ip = get_status_on_node(search_ip)
