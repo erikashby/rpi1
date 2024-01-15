@@ -41,13 +41,14 @@ def find_nodes():
         search_ip = "http://" + base_ip + str(x) + ":5000"
         # Try Exception, if connection error, continue, else put in "nodes" array
         try:
-            test_ip = requests.get(search_ip + "/status", timeout=0.1)
-            test_ip = get_status_on_node(search_ip)
-            if get_status_on_node(search_ip):
-                nodes.append[test_ip]
+            test_ip = requests.get(search_ip + "/status", timeout=0.01)
         except requests.ConnectionError as e:
             print(e)
             continue
+
+        test_ip = get_status_on_node(search_ip)
+        if test_ip:
+            nodes.append[test_ip]
     
     print("NODES:")
     print(nodes)
