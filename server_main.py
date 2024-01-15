@@ -43,9 +43,8 @@ def find_nodes():
         try:
             print("Searching IP: " + search_ip)
             test_ip = requests.get(search_ip + "/status")
-            test_ip.raise_for_status()
             print("Successfully got a connections at: " + search_ip)
-        except requests.exceptions.HTTPError as e:
+        except requests.exceptions.RequestException as e:
             #print(e)
             continue
 
