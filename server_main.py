@@ -43,6 +43,7 @@ def find_nodes():
         test_ip = get_status_on_node(search_ip)
         if test_ip:
             nodes.append[test_ip]
+            print("\n\nSuccessfully got a connection\n\n")
 
         
     
@@ -146,7 +147,7 @@ def check_cond(cond):
 def get_status_on_node(nodeurl):
     # get node status, and return node_status["status"].
     try:
-        status = requests.get(nodeurl + "/status").json()
+        status = requests.get(nodeurl + "/status", timeout=0.75).json()
     except requests.exceptions.RequestException as e:
         print(e)
         return False
