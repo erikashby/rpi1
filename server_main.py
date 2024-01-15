@@ -39,16 +39,10 @@ def find_nodes():
     # now search for IPs
     for x in range(1,256):
         search_ip = "http://" + base_ip + str(x) + ":5000"
-        # Try Exception, if connection error, continue, else put in "nodes" array
-        try:
-            print("Searching IP: " + search_ip)
-            test_ip = get_status_on_node(search_ip)
-            if test_ip:
-                nodes.append[test_ip]
-            print("Successfully got a connections at: " + search_ip)
-        except requests.exceptions.RequestException as e:
-            #print(e)
-            continue
+        print("Searching IP: " + search_ip)
+        test_ip = get_status_on_node(search_ip)
+        if test_ip:
+            nodes.append[test_ip]
 
         
     
@@ -151,7 +145,11 @@ def check_cond(cond):
 
 def get_status_on_node(nodeurl):
     # get node status, and return node_status["status"].
-    status = requests.get(nodeurl + "/status").json()
+    try:
+        status = requests.get(nodeurl + "/status").json()
+    except requests.exceptions.RequestException as e:
+        print(e)
+        return False
     print("STATUS:")
     print(status)
     return status
